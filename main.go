@@ -34,8 +34,8 @@ func main() {
 	// Prepare template for execution.
 	tmpl = template.Must(template.ParseFiles("index.html"))
 	data = templateData{
-		Service:  service,
-		Revision: revision,
+		// Service:  service,
+		// Revision: revision,
 	}
 
 	// Define HTTP server.
@@ -50,7 +50,6 @@ func main() {
 		port = "8080"
 	}
 
-	log.Print("Hello from Cloud Run! The container started successfully and is listening for HTTP requests on $PORT")
 	log.Printf("Listening on port %s", port)
 	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
