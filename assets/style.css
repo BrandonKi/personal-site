@@ -1,4 +1,5 @@
- body, html {
+
+body, html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -8,7 +9,6 @@
 	font-display: fallback;
 	background: darkgray;
 }
-
 * {
     box-sizing: inherit;
 }
@@ -35,11 +35,6 @@ em {
 	font-style: normal;
 }
 
-.site-container {
-    width: 100%;
-	position: absolute;
-}
-
 code {
 	font-family: 'Roboto Mono', Courier, monospace;
 	color: #A30038;
@@ -50,12 +45,133 @@ code {
 	font-weight: 500;
 }
 
-@media (prefers-color-scheme: dark) {
-	a {
-		color: #8AB4F8;
-	}
-	a:visited {
-		color: #b48af8;
-	}
+a:hover {
+	text-decoration: yellow underline;
 }
 
+.landing-container {
+	background: #333;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} 
+
+@keyframes typing {
+	from { width: 0% }
+	to { width: 100% }
+}
+
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: yellow }
+}
+
+/* Hi there! My name is Brandon Kirincich */
+@keyframes typing-sequence {
+	0% { content: "H"; }
+	2.5% { content: "Hi"; }
+	5% { content: "Hi "; }
+	7.5% { content: "Hi t"; }
+	10% { content: "Hi th"; }
+	12.5% { content: "Hi the"; }
+	15% { content: "Hi ther"; }
+	17.5% { content: "Hi there"; }
+	20% { content: "Hi there!"; }
+	22.5% { content: "Hi there!"; }
+	25% { content: "Hi there!"; }
+	27.5% { content: "Hi there!"; }
+	30% { content: "Hi there!"; }
+	32.5% { content: "Hi there!"; }
+	35% { content: "Hi there! "; }
+	37.5% { content: "Hi there! M"; }
+	40% { content: "Hi there! My"; }
+	42.5% { content: "Hi there! My n"; }
+	45% { content: "Hi there! My na"; }
+	47.5% { content: "Hi there! My nam"; }
+	50% { content: "Hi there! My name"; }
+	52.5% { content: "Hi there! My name i"; }
+	55% { content: "Hi there! My name is"; }
+	57.5% { content: "Hi there! My name is "; }
+	60% { content: "Hi there! My name is B"; }
+	62.5% { content: "Hi there! My name is Br"; }
+	65% { content: "Hi there! My name is Bra"; }
+	67.5% { content: "Hi there! My name is Bran"; }
+	70% { content: "Hi there! My name is Brand"; }
+	72.5% { content: "Hi there! My name is Brando"; }
+	75% { content: "Hi there! My name is Brandon"; }
+	77.5% { content: "Hi there! My name is Brandon "; }
+	80% { content: "Hi there! My name is Brandon K"; }
+	82.5% { content: "Hi there! My name is Brandon Ki"; }
+	85% { content: "Hi there! My name is Brandon Kir"; }
+	87.5% { content: "Hi there! My name is Brandon Kiri"; }
+	90% { content: "Hi there! My name is Brandon Kirin"; }
+	92.5% { content: "Hi there! My name is Brandon Kirinc"; }
+	95% { content: "Hi there! My name is Brandon Kirinci"; }
+	97.5% { content: "Hi there! My name is Brandon Kirincic"; }
+	100% { content: "Hi there! My name is Brandon Kirincich"; }
+}
+
+.terminal-intro {
+	position: relative;
+	color: #fff;
+	font-family: monospace;
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 0 auto;
+}
+
+.terminal-intro::before {
+	content: "";
+	animation: 
+		typing-sequence 3.75s;
+	animation-fill-mode: forwards;
+}
+
+.terminal-intro::after {
+	content: "";
+	border-right: 1ch solid yellow;
+	animation: blink-caret 1s step-end infinite;
+}
+
+@keyframes fade-in {
+	0% { opacity: 0; }
+	66% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+.intro {
+	font-family: monospace;
+	color: #fff;
+	animation: fade-in 7s;
+	padding-left: 20%;
+	padding-right: 20%;
+	text-align: center;
+}
+
+/* .navbar-custom {
+	background-color: gray;
+} */
+ 
+/* .navbar-dark .navbar-brand,
+.navbar-dark .navbar-text,
+.navbar-dark .nav-link {
+	color: white;
+} */
+
+.navbar-dark .navbar-brand, .navbar-dark .navbar-nav .nav-link {
+    color: white !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+	text-decoration: yellow underline;
+    color: yellow !important;
+}
+
+a {
+	color: yellow !important;
+}
+
+a:hover {
+	text-decoration: yellow underline;
+}
