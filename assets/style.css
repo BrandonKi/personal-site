@@ -14,25 +14,9 @@ body, html {
 }
 
 h1 {
-	font-size: 24px;
+	font-size: 5vw;
 	font-weight: bold;
 	margin-bottom: 0px;
-}
-
-h2 {
-	font-size: 18px;
-	font-weight: normal;
-	margin-top: 4px;
-}
-
-h3 {
-	font-size: 20px;
-	margin-bottom: 0px;
-}
-
-em {
-	font-weight: 600;
-	font-style: normal;
 }
 
 code {
@@ -54,6 +38,7 @@ a:hover {
 	height: 100%;
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	align-items: center;
 } 
 
@@ -67,51 +52,6 @@ a:hover {
 	50% { border-color: yellow }
 }
 
-/* Hi there! My name is Brandon Kirincich */
-@keyframes typing-sequence {
-	0% { content: "H"; }
-	2.5% { content: "Hi"; }
-	5% { content: "Hi "; }
-	7.5% { content: "Hi t"; }
-	10% { content: "Hi th"; }
-	12.5% { content: "Hi the"; }
-	15% { content: "Hi ther"; }
-	17.5% { content: "Hi there"; }
-	20% { content: "Hi there!"; }
-	22.5% { content: "Hi there!"; }
-	25% { content: "Hi there!"; }
-	27.5% { content: "Hi there!"; }
-	30% { content: "Hi there!"; }
-	32.5% { content: "Hi there!"; }
-	35% { content: "Hi there! "; }
-	37.5% { content: "Hi there! M"; }
-	40% { content: "Hi there! My"; }
-	42.5% { content: "Hi there! My n"; }
-	45% { content: "Hi there! My na"; }
-	47.5% { content: "Hi there! My nam"; }
-	50% { content: "Hi there! My name"; }
-	52.5% { content: "Hi there! My name i"; }
-	55% { content: "Hi there! My name is"; }
-	57.5% { content: "Hi there! My name is "; }
-	60% { content: "Hi there! My name is B"; }
-	62.5% { content: "Hi there! My name is Br"; }
-	65% { content: "Hi there! My name is Bra"; }
-	67.5% { content: "Hi there! My name is Bran"; }
-	70% { content: "Hi there! My name is Brand"; }
-	72.5% { content: "Hi there! My name is Brando"; }
-	75% { content: "Hi there! My name is Brandon"; }
-	77.5% { content: "Hi there! My name is Brandon "; }
-	80% { content: "Hi there! My name is Brandon K"; }
-	82.5% { content: "Hi there! My name is Brandon Ki"; }
-	85% { content: "Hi there! My name is Brandon Kir"; }
-	87.5% { content: "Hi there! My name is Brandon Kiri"; }
-	90% { content: "Hi there! My name is Brandon Kirin"; }
-	92.5% { content: "Hi there! My name is Brandon Kirinc"; }
-	95% { content: "Hi there! My name is Brandon Kirinci"; }
-	97.5% { content: "Hi there! My name is Brandon Kirincic"; }
-	100% { content: "Hi there! My name is Brandon Kirincich"; }
-}
-
 .terminal-intro {
 	position: relative;
 	color: #fff;
@@ -123,6 +63,8 @@ a:hover {
 
 .terminal-intro::before {
 	content: "";
+	white-space: pre;
+	text-align: center;
 	animation: 
 		typing-sequence 3.75s;
 	animation-fill-mode: forwards;
@@ -144,9 +86,10 @@ a:hover {
 	font-family: monospace;
 	color: #fff;
 	animation: fade-in 7s;
-	padding-left: 20%;
-	padding-right: 20%;
+	padding-left: 2vw;
+	padding-right: 2vw;
 	text-align: center;
+	display:inline-block;
 }
 
 /* .navbar-custom {
@@ -174,4 +117,122 @@ a {
 
 a:hover {
 	text-decoration: yellow underline;
+}
+
+.dropdown {background: #353a40;}
+.dropdown .dropdown-menu {background: #353a40;}
+.dropdown .dropdown-menu a{color: white !important;}
+.dropdown-menu .dropdown-item {display: inline-block; width: 100%; padding: 10px 5px; background: #353a40;}
+.container .dropdown .dropdown-menu a:hover
+{
+	text-decoration: yellow underline;
+    color: yellow !important;
+}
+
+@keyframes typing-sequence {
+	0% { content: "H"; }
+	2.5% { content: "Hi"; }
+	5% { content: "Hi "; }
+	7.5% { content: "Hi t"; }
+	10% { content: "Hi th"; }
+	12.5% { content: "Hi the"; }
+	15% { content: "Hi ther"; }
+	17.5% { content: "Hi there"; }
+	20% { content: "Hi there!"; }
+	22.5% { content: "Hi there!"; }
+	25% { content: "Hi there!"; }
+	27.5% { content: "Hi there!"; }
+	30% { content: "Hi there!"; }
+	32.5% { content: "Hi there!\A"; }
+	35% { content: "Hi there!\A "; }
+	37.5% { content: "Hi there!\A M"; }
+	40% { content: "Hi there!\A My"; }
+	42.5% { content: "Hi there!\A My n"; }
+	45% { content: "Hi there!\A My na"; }
+	47.5% { content: "Hi there!\A My nam"; }
+	50% { content: "Hi there!\A My name"; }
+	52.5% { content: "Hi there!\A My name i"; }
+	55% { content: "Hi there!\A My name is"; }
+	57.5% { content: "Hi there!\A My name is "; }
+	60% { content: "Hi there!\A My name is B"; }
+	62.5% { content: "Hi there!\A My name is Br"; }
+	65% { content: "Hi there!\A My name is Bra"; }
+	67.5% { content: "Hi there!\A My name is Bran"; }
+	70% { content: "Hi there!\A My name is Brand"; }
+	72.5% { content: "Hi there!\A My name is Brando"; }
+	75% { content: "Hi there!\A My name is Brandon"; }
+	77.5% { content: "Hi there!\A My name is Brandon "; }
+	80% { content: "Hi there!\A My name is Brandon K"; }
+	82.5% { content: "Hi there!\A My name is Brandon Ki"; }
+	85% { content: "Hi there!\A My name is Brandon Kir"; }
+	87.5% { content: "Hi there!\A My name is Brandon Kiri"; }
+	90% { content: "Hi there!\A My name is Brandon Kirin"; }
+	92.5% { content: "Hi there!\A My name is Brandon Kirinc"; }
+	95% { content: "Hi there!\A My name is Brandon Kirinci"; }
+	97.5% { content: "Hi there!\A My name is Brandon Kirincic"; }
+	100% { content: "Hi there!\A My name is Brandon Kirincich"; }
+}
+
+@media screen and (min-width: 768px) {
+    /* .rwd-break { display: none; } */
+	h1 {
+		font-size: 4vw;
+		font-weight: bold;
+		margin-bottom: 0px;
+	}
+
+	.intro {
+		font-family: monospace;
+		color: #fff;
+		animation: fade-in 7s;
+		padding-left: 6vw;
+		padding-right: 6vw;
+		text-align: center;
+		display:inline-block;
+	}
+
+	/* Hi there! My name is Brandon Kirincich */
+	@keyframes typing-sequence {
+		0% { content: "H"; }
+		2.5% { content: "Hi"; }
+		5% { content: "Hi "; }
+		7.5% { content: "Hi t"; }
+		10% { content: "Hi th"; }
+		12.5% { content: "Hi the"; }
+		15% { content: "Hi ther"; }
+		17.5% { content: "Hi there"; }
+		20% { content: "Hi there!"; }
+		22.5% { content: "Hi there!"; }
+		25% { content: "Hi there!"; }
+		27.5% { content: "Hi there!"; }
+		30% { content: "Hi there!"; }
+		32.5% { content: "Hi there!"; }
+		35% { content: "Hi there! "; }
+		37.5% { content: "Hi there! M"; }
+		40% { content: "Hi there! My"; }
+		42.5% { content: "Hi there! My n"; }
+		45% { content: "Hi there! My na"; }
+		47.5% { content: "Hi there! My nam"; }
+		50% { content: "Hi there! My name"; }
+		52.5% { content: "Hi there! My name i"; }
+		55% { content: "Hi there! My name is"; }
+		57.5% { content: "Hi there! My name is "; }
+		60% { content: "Hi there! My name is B"; }
+		62.5% { content: "Hi there! My name is Br"; }
+		65% { content: "Hi there! My name is Bra"; }
+		67.5% { content: "Hi there! My name is Bran"; }
+		70% { content: "Hi there! My name is Brand"; }
+		72.5% { content: "Hi there! My name is Brando"; }
+		75% { content: "Hi there! My name is Brandon"; }
+		77.5% { content: "Hi there! My name is Brandon "; }
+		80% { content: "Hi there! My name is Brandon K"; }
+		82.5% { content: "Hi there! My name is Brandon Ki"; }
+		85% { content: "Hi there! My name is Brandon Kir"; }
+		87.5% { content: "Hi there! My name is Brandon Kiri"; }
+		90% { content: "Hi there! My name is Brandon Kirin"; }
+		92.5% { content: "Hi there! My name is Brandon Kirinc"; }
+		95% { content: "Hi there! My name is Brandon Kirinci"; }
+		97.5% { content: "Hi there! My name is Brandon Kirincic"; }
+		100% { content: "Hi there! My name is Brandon Kirincich"; }
+	}
 }
