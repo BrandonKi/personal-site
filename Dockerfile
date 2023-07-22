@@ -31,7 +31,8 @@ ENV GOTRACEBACK=single
 # Copy template & assets
 WORKDIR /personal-site
 COPY --from=build /app ./app
-COPY index.html index.html
-COPY assets assets/
+COPY html html/
+COPY stylesheets stylesheets/
+COPY img img/
 
 ENTRYPOINT ["./app"]

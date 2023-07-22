@@ -1,1 +1,11 @@
-{}
+{
+  "name": "personal-site",
+  "description": "",
+  "version": "1.0.0",
+  "main": "",
+  "scripts": {
+    
+  },
+  "author": "Brandon Kirincich",
+  "license": "MIT"
+}

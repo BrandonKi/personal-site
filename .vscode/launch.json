@@ -23,11 +23,11 @@
                 "minikube": {}
             },
             "watch": true,
-            // "debug": {
-            //     "sourceFileMap": {
-            //         "${workspaceFolder}": "/personal-site"
-            //     }
-            // }
+            "debug": {
+                "sourceFileMap": {
+                    "${workspaceFolder}": "/personal-site"
+                }
+            }
         },
         {
             "name": "Cloud Run: Run/Debug Locally",

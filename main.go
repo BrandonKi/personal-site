@@ -1,50 +1,47 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
 )
 
-// templateData provides template parameters.
 type templateData struct {
-	Service  string
-	Revision string
+	Content template.HTML
 }
 
-// Variables used to generate the HTML page.
 var (
-	data templateData
-	tmpl *template.Template
+	baseTemplate *template.Template
+	pageMap      map[string]templateData
 )
 
 func main() {
-	// Initialize template parameters.
-	service := os.Getenv("K_SERVICE")
-	if service == "" {
-		service = "???"
+	// service := os.Getenv("K_SERVICE")
+	// if service == "" {
+	// 	service = "???"
+	// }
+
+	// revision := os.Getenv("K_REVISION")
+	// if revision == "" {
+	// 	revision = "???"
+	// }
+	pageMap = map[string]templateData{
+		"/":          {Content: template.HTML(loadFile("html/landing.html"))},
+		"/home":      {Content: template.HTML(loadFile("html/home.html"))},
+		"/portfolio": {Content: template.HTML(loadFile("html/portfolio.html"))},
+		"/resources": {Content: template.HTML(loadFile("html/resources.html"))},
+		"/blog":      {Content: template.HTML(loadFile("html/blog.html"))},
+		"/contact":   {Content: template.HTML(loadFile("html/contact.html"))},
 	}
 
-	revision := os.Getenv("K_REVISION")
-	if revision == "" {
-		revision = "???"
-	}
+	baseTemplate, _ = template.ParseFiles("html/index.html")
 
-	// Prepare template for execution.
-	tmpl = template.Must(template.ParseFiles("index.html"))
-	data = templateData{
-		// Service:  service,
-		// Revision: revision,
-	}
+	http.HandleFunc("/", baseHandler)
 
-	// Define HTTP server.
-	http.HandleFunc("/", helloRunHandler)
+	http.Handle("/stylesheets/", http.StripPrefix("/stylesheets/", http.FileServer(http.Dir("stylesheets"))))
 
-	fs := http.FileServer(http.Dir("./assets"))
-	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
-
-	// PORT environment variable is provided by Cloud Run.
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
@@ -57,11 +54,30 @@ func main() {
 	}
 }
 
-// helloRunHandler responds to requests by rendering an HTML page.
-func helloRunHandler(w http.ResponseWriter, r *http.Request) {
-	if err := tmpl.Execute(w, data); err != nil {
-		msg := http.StatusText(http.StatusInternalServerError)
-		log.Printf("template.Execute: %v", err)
-		http.Error(w, msg, http.StatusInternalServerError)
+func baseHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println(r.URL.Path[:])
+	if data, ok := pageMap[r.URL.Path[:]]; ok {
+		if err := baseTemplate.Execute(w, data); err != nil {
+			msg := http.StatusText(http.StatusInternalServerError)
+			log.Printf("template.Execute: %v", err)
+			http.Error(w, msg, http.StatusInternalServerError)
+		}
+	} else {
+		handleError(w, r, http.StatusNotFound)
 	}
+}
+
+func handleError(w http.ResponseWriter, r *http.Request, status int) {
+	w.WriteHeader(status)
+	if status == http.StatusNotFound {
+		fmt.Fprint(w, "404 page not found")
+	}
+}
+
+func loadFile(filename string) string {
+	body, err := os.ReadFile(filename)
+	if err != nil {
+		return "ERROR"
+	}
+	return string(body)
 }
