@@ -32,7 +32,7 @@ ENV GOTRACEBACK=single
 WORKDIR /personal-site
 COPY --from=build /app ./app
 COPY html html/
-COPY stylesheets stylesheets/
+COPY css css/
 COPY img img/
 
 ENTRYPOINT ["./app"]

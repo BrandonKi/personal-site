@@ -40,7 +40,7 @@ func main() {
 
 	http.HandleFunc("/", baseHandler)
 
-	http.Handle("/stylesheets/", http.StripPrefix("/stylesheets/", http.FileServer(http.Dir("stylesheets"))))
+	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css"))))
 
 	port := os.Getenv("PORT")
 	if port == "" {
