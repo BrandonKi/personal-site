@@ -74,7 +74,7 @@ code {
 .portfolio-container .jumbotron {
 	display: block;
 	margin-top: 0px;
-	padding: 32px;
+	padding: 1rem;
 	margin-bottom: 40px;
 	position: relative;
 	background-color: #222222;
@@ -97,14 +97,13 @@ code {
 	transform: scale(2.15);
 }
 
-.portfolio-container .jumbotron .display-4 {
+.portfolio-container .jumbotron .display-5 {
 	text-decoration: underline;
 	padding-bottom: 30px;
 }
 
 .portfolio-container .jumbotron .footer {
-	bottom: 0px;
-	position: absolute;
+	margin-bottom: 0px;
 }
 
 @keyframes typing {
