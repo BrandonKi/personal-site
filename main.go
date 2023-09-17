@@ -18,15 +18,6 @@ var (
 )
 
 func main() {
-	// service := os.Getenv("K_SERVICE")
-	// if service == "" {
-	// 	service = "???"
-	// }
-
-	// revision := os.Getenv("K_REVISION")
-	// if revision == "" {
-	// 	revision = "???"
-	// }
 	pageMap = map[string]templateData{
 		"/":          {Content: template.HTML(loadFile("html/landing.html"))},
 		"/home":      {Content: template.HTML(loadFile("html/home.html"))},
@@ -34,6 +25,7 @@ func main() {
 		"/resources": {Content: template.HTML(loadFile("html/resources.html"))},
 		"/blog":      {Content: template.HTML(loadFile("html/blog.html"))},
 		"/contact":   {Content: template.HTML(loadFile("html/contact.html"))},
+		"/login":     {Content: template.HTML(loadFile("html/login.html"))},
 	}
 
 	baseTemplate, _ = template.ParseFiles("html/index.html")

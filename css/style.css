@@ -39,12 +39,72 @@ code {
 }
 
 .landing-container {
-	background: #333;
 	height: 100%;
 	display: flex;
 	justify-content: center;
 	text-align: center;
 	align-items: center;
+}
+
+.contact-container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+
+.portfolio-container {
+	height: 100%;
+	padding-top: 50px;
+}
+
+.login-container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+
+.portfolio-container a:hover {
+    text-decoration: none !important;
+}
+
+.portfolio-container .jumbotron {
+	display: block;
+	margin-top: 0px;
+	padding: 32px;
+	margin-bottom: 40px;
+	position: relative;
+	background-color: #222222;
+	color: white !important;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.portfolio-container .jumbotron:hover {
+	cursor: pointer;
+	transition: all 0.8s linear;
+	box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+	top: -4px;
+	border: 1px solid yellow;
+	text-decoration: none !important;
+	background-color: #272727;
+}
+
+.portfolio-container .jumbotron:hover:before {
+	transform: scale(2.15);
+}
+
+.portfolio-container .jumbotron .display-4 {
+	text-decoration: underline;
+	padding-bottom: 30px;
+}
+
+.portfolio-container .jumbotron .footer {
+	bottom: 0px;
+	position: absolute;
 }
 
 @keyframes typing {
@@ -132,12 +192,12 @@ code {
 	background-color: inherit !important;
 }
 
-a {
+.link {
 	color: yellow !important;
 	text-decoration: yellow underline !important;
 }
 
-a:hover {
+.link:hover {
 	background-color: yellow !important;
 	color: #333 !important;
 }
@@ -337,6 +397,13 @@ a:hover {
 }
 
 @media screen and (min-width: 768px) {
+
+	.portfolio-container {
+		height: 100%;
+		padding-left: 4vw;
+		padding-right: 4vw;
+		padding-top: 50px;
+	}
 
 	/* .rwd-break { display: none; } */
 	h1 {
