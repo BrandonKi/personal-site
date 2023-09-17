@@ -46,7 +46,31 @@ code {
 	align-items: center;
 }
 
+.home-container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+
 .contact-container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+
+.blog-container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+
+.resources-container {
 	height: 100%;
 	display: flex;
 	justify-content: center;
