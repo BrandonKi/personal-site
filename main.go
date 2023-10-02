@@ -19,8 +19,9 @@ var (
 
 func main() {
 	pageMap = map[string]templateData{
-		"/":          {Content: template.HTML(loadFile("html/landing.html"))},
-		"/home":      {Content: template.HTML(loadFile("html/home.html"))},
+		"/":     {Content: template.HTML(loadFile("html/landing.html"))},
+		"/home": {Content: template.HTML(loadFile("html/landing.html"))},
+		// "/home":      {Content: template.HTML(loadFile("html/home.html"))},
 		"/portfolio": {Content: template.HTML(loadFile("html/portfolio.html"))},
 		"/resources": {Content: template.HTML(loadFile("html/resources.html"))},
 		"/blog":      {Content: template.HTML(loadFile("html/blog.html"))},
