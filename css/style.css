@@ -44,6 +44,7 @@ code {
 	justify-content: center;
 	text-align: center;
 	align-items: center;
+	position: relative;
 }
 
 .home-container {
@@ -139,6 +140,26 @@ code {
 	}
 }
 
+.terminal-intro-flat {
+	position: relative;
+	color: #fff;
+	font-family: monospace;
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 0 auto;
+}
+
+.terminal-intro-flat::before {
+	/* white-space: pre; */
+	text-align: center;
+	content: "Hi there!\A My name is Brandon Kirincich";
+}
+
+/* .terminal-intro-flat::after {
+	content: "";
+	border-right: 1ch solid transparent;
+} */
+
 .terminal-intro {
 	position: relative;
 	color: #fff;
@@ -152,6 +173,7 @@ code {
 	content: "";
 	white-space: pre;
 	text-align: center;
+	animation-delay: 1s;
 	animation:
 		typing-sequence 3.75s;
 	animation-fill-mode: forwards;
@@ -175,6 +197,15 @@ code {
 	100% {
 		opacity: 1;
 	}
+}
+
+.intro-flat {
+	font-family: monospace;
+	color: #fff;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	text-align: center;
+	display: inline-block;
 }
 
 .intro {
@@ -240,41 +271,55 @@ code {
 	background-color: inherit !important;
 }
 
+.animation-button {
+	border: none;
+	background: none;
+	cursor: pointer;
+	margin: 16px 8px 0px 0px;
+	padding: 0;
+}
+
+
+.animation-button:focus:not(:focus-visible) {
+	outline: 0;
+	box-shadow: none;
+}
+
 @keyframes typing-sequence {
 	0% {
-		content: "H";
+		content: "";
 	}
 
 	2.5% {
-		content: "Hi";
+		content: "H";
 	}
 
 	5% {
-		content: "Hi ";
+		content: "Hi";
 	}
 
 	7.5% {
-		content: "Hi t";
+		content: "Hi ";
 	}
 
 	10% {
-		content: "Hi th";
+		content: "Hi t";
 	}
 
 	12.5% {
-		content: "Hi the";
+		content: "Hi th";
 	}
 
 	15% {
-		content: "Hi ther";
+		content: "Hi the";
 	}
 
 	17.5% {
-		content: "Hi there";
+		content: "Hi ther";
 	}
 
 	20% {
-		content: "Hi there!";
+		content: "Hi there";
 	}
 
 	22.5% {
@@ -420,6 +465,15 @@ code {
 		font-size: 4vw;
 		font-weight: bold;
 		margin-bottom: 0px;
+	}
+
+	.intro-flat {
+		font-family: monospace;
+		color: #fff;
+		padding-left: 6vw;
+		padding-right: 6vw;
+		text-align: center;
+		display: inline-block;
 	}
 
 	.intro {
