@@ -145,7 +145,7 @@ code {
 	color: #fff;
 	font-family: monospace;
 	overflow: hidden;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	margin: 0 auto;
 }
 
@@ -465,6 +465,12 @@ code {
 		font-size: 4vw;
 		font-weight: bold;
 		margin-bottom: 0px;
+	}
+
+	.terminal-intro-flat::before {
+		white-space: pre;
+		text-align: center;
+		content: "Hi there! My name is Brandon Kirincich";
 	}
 
 	.intro-flat {
