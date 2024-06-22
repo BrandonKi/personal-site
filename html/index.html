@@ -21,12 +21,6 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 	<script defer>
-		// window.addEventListener('load', () => {
-		// 	if (document.querySelector('#long') !== null) {
-		// 		window.sessionStorage.setItem('Introduction', 'displayed');
-		// 	}
-		// })
-
 		function playAnimation(params) {
 			document.querySelector('#short').classList.remove('terminal-intro-flat')
 			document.querySelector('#short').classList.remove('terminal-intro')
@@ -37,15 +31,6 @@
 			void document.querySelector('#long').offsetWidth;
 			document.querySelector('#long').classList.add('intro')
 		}
-
-		// document.addEventListener("DOMContentLoaded", function() {
-		// 	if (window.sessionStorage.getItem('Introduction')) {
-		// 		document.querySelector('#short').classList.remove('terminal-intro')
-		// 		document.querySelector('#short').classList.add('terminal-intro-flat')
-		// 		document.querySelector('#long').classList.remove('intro')
-		// 		document.querySelector('#long').classList.add('intro-flat')
-		// 	}
-		// });
 	</script>
 	
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="navigation">
